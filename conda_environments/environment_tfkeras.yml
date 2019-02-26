@@ -1,0 +1,37 @@
+name: tfkeras
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.6
+  - pip
+  - conda-forge::numpy=1.16.1 # requirement of tensorflow
+  - scipy=1.2.0
+  - pandas=0.24.1
+  - scikit-learn=0.20.2
+  - matplotlib=3.0.2
+  - seaborn=0.9.0
+  - pytest=4.2.1
+  - xlrd=1.2.0
+  - openpyxl=2.6.0
+  - xlwt=1.3.0
+  - xarray=0.11.3
+  - dask=1.1.1
+  - netCDF4=1.4.2
+  - bottleneck=1.2.1
+  - mkl-service=1.1.2
+  - zlib=1.2.11
+  - sympy=1.3
+  - numba=0.42.0
+  - jupyter=1.0.0
+  - cython=0.29.5
+  - pip:
+    - watermark
+    - tensorflow==1.12.0
+
+# whatever works for you:
+# pip install --ignore-installed --upgrade tensorflow-gpu
+# pip install --ignore-installed --upgrade tensorflow
+
+# test the install
+# python -c "import tensorflow as tf; tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
