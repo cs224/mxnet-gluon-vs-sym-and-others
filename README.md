@@ -13,6 +13,10 @@ Go into the conda_environments directory and run the `./create.sh` script to rep
 
 In the top of the notebooks you will see the [watermark](https://pypi.org/project/watermark/) header that will show the versions used. While I noticed the problem with mxnet-cu90mkl in version 1.3.1, the below notebooks reproduce the problem with the raw mxnet 1.3.1 installation purely on CPU.
 
+# Discussion thread(s)
+
+* [mxnet 1.3.1: speed/performance differences between the mxnet gluon and module/symbol APIs of at least a factor of 2 ](https://discuss.mxnet.io/t/mxnet-1-3-1-speed-performance-differences-between-the-mxnet-gluon-and-module-symbol-apis-of-at-least-a-factor-of-2/3314)
+
 # Notebooks
 
 * [mxnet-gluon-vs-sym-speed.ipynb](https://nbviewer.jupyter.org/github/cs224/mxnet-gluon-vs-sym-and-others/blob/master/mxnet-gluon-vs-sym-speed.ipynb?flush_cache=true)<br>
