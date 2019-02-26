@@ -24,3 +24,7 @@ In the top of the notebooks you will see the [watermark](https://pypi.org/projec
 * [tensorflow-keras-speed.ipynb](https://nbviewer.jupyter.org/github/cs224/mxnet-gluon-vs-sym-and-others/blob/master/tensorflow-keras-speed.ipynb?flush_cache=true)<br>
   Same model but implemented in tensorflow keras. In order to run the model you'll have to use the tfkeras conda environment that you can create by hand via `conda env create -f environment_tfkeras.yml`.<br>
   The time needed is 36.34 seconds, e.g. a bit faster than the mxnet gluon version above, but slower than the mxnet module/symbol version. The metrics are also a bit better after 20 epochs than with both mxnet versions, but this may be due to differences in the weight initialization (while I've used in both cases Xavier initializers).
+* [mxnet-keras-speed.ipynb](https://nbviewer.jupyter.org/github/cs224/mxnet-gluon-vs-sym-and-others/blob/master/mxnet-keras-speed.ipynb?flush_cache=true)<br>
+  Same model but implemented in [keras-mxnet](https://github.com/awslabs/keras-apache-mxnet) v.2.2.4.1. In order to run the model you'll have to use the mxnetkeras conda environment that you can create by hand via `conda env create -f environment_mxnetkeras.yml`.<br>
+  The time needed is 32.89 seconds, e.g. very slightly faster than the tfkears version. But what is **really** surprising is that its speed does neither match the gluon version (**much slower**) nor the module/symbol version (**much faster**)?? This is puzzleing me even more??<br>
+  The metrics are basically the same as for the tfkeras version.
