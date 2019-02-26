@@ -21,3 +21,6 @@ In the top of the notebooks you will see the [watermark](https://pypi.org/projec
 
 * [mxnet-gluon-vs-sym-speed.ipynb](https://nbviewer.jupyter.org/github/cs224/mxnet-gluon-vs-sym-and-others/blob/master/mxnet-gluon-vs-sym-speed.ipynb?flush_cache=true)<br>
   This notebook shows the comparison of gluon vs. module/symbol for a very simple MLP architecture. The seen speed difference is a factor of 2.17 between 21.86 seconds for the module/symbol version and 47.43 seconds for the gluon version.
+* [tensorflow-keras-speed.ipynb](https://nbviewer.jupyter.org/github/cs224/mxnet-gluon-vs-sym-and-others/blob/master/tensorflow-keras-speed.ipynb?flush_cache=true)<br>
+  Same model but implemented in tensorflow keras. In order to run the model you'll have to use the tfkeras conda environment that you can create by hand via `conda env create -f environment_tfkeras.yml`.<br>
+  The time needed is 36.34 seconds, e.g. a bit faster than the mxnet gluon version above, but slower than the mxnet module/symbol version. The metrics are also a bit better after 20 epochs than with both mxnet versions, but this may be due to differences in the weight initialization (while I've used in both cases Xavier initializers).
