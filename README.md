@@ -28,3 +28,12 @@ In the top of the notebooks you will see the [watermark](https://pypi.org/projec
   Same model but implemented in [keras-mxnet](https://github.com/awslabs/keras-apache-mxnet) v.2.2.4.1. In order to run the model you'll have to use the mxnetkeras conda environment that you can create by hand via `conda env create -f environment_mxnetkeras.yml`.<br>
   The time needed is 32.89 seconds, e.g. very slightly faster than the tfkears version. But what is **really** surprising is that its speed does neither match the gluon version (**much slower**) nor the module/symbol version (**much faster**)?? This is puzzleing me even more??<br>
   The metrics are basically the same as for the tfkeras version.
+
+# Summary
+
+  | base library | variant       | time  |
+  |--------------|---------------|-------|
+  | mxnet        | module/symbol | 21.86 |
+  | mxnet        | keras         | 32.89 |
+  | mxnet        | gluon         | 47.43 |
+  | tensorflow   | keras         | 36.34 |
