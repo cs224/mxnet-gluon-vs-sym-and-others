@@ -41,3 +41,10 @@ In the top of the notebooks you will see the [watermark](https://pypi.org/projec
   | mxnet        | gluon                                                                 | 47.43 |
   | mxnet        | gluon DataIterLoader, hybridize(static_shape=True, static_alloc=True) | 20.17 |
   | tensorflow   | keras                                                                 | 36.34 |
+
+# Other references
+
+* [Gluon: building blocks for your Deep Learning universe](https://medium.com/@julsimon/gluon-building-blocks-for-your-deep-learning-universe-4bce4e56ef55)
+* [Deep Learning Framework Examples](https://github.com/ilkarman/DeepLearningFrameworks): this is a more extensive evaluation of different learning frameworks
+  * [Gluon_CNN](https://github.com/ilkarman/DeepLearningFrameworks/blob/master/notebooks/Gluon_CNN.ipynb)
+  * [MXNet_CNN_highAPI](https://github.com/ilkarman/DeepLearningFrameworks/blob/master/notebooks/MXNet_CNN_highAPI.ipynb)
