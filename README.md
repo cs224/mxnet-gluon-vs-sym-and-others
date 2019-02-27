@@ -48,3 +48,5 @@ In the top of the notebooks you will see the [watermark](https://pypi.org/projec
 * [Deep Learning Framework Examples](https://github.com/ilkarman/DeepLearningFrameworks): this is a more extensive evaluation of different learning frameworks
   * [Gluon_CNN](https://github.com/ilkarman/DeepLearningFrameworks/blob/master/notebooks/Gluon_CNN.ipynb)
   * [MXNet_CNN_highAPI](https://github.com/ilkarman/DeepLearningFrameworks/blob/master/notebooks/MXNet_CNN_highAPI.ipynb)
+* [Gluon debugging on Amazon EC2](https://www.youtube.com/watch?v=6-dOoJVw9_0)
+* [Hybrid - Faster training and easy deployment](https://mxnet.incubator.apache.org/versions/master/tutorials/gluon/hybrid.html)
