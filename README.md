@@ -20,7 +20,10 @@ In the top of the notebooks you will see the [watermark](https://pypi.org/projec
 # Notebooks
 
 * [mxnet-gluon-vs-sym-speed.ipynb](https://nbviewer.jupyter.org/github/cs224/mxnet-gluon-vs-sym-and-others/blob/master/mxnet-gluon-vs-sym-speed.ipynb?flush_cache=true)<br>
-  This notebook shows the comparison of gluon vs. module/symbol for a very simple MLP architecture. The seen speed difference is a factor of 2.17 between 21.86 seconds for the module/symbol version and 47.43 seconds for the gluon version.
+  Due to the feed-back on the [discuss.mxnet.io](https://discuss.mxnet.io/t/mxnet-1-3-1-speed-performance-differences-between-the-mxnet-gluon-and-module-symbol-apis-of-at-least-a-factor-of-2/3314/3) forum I was able to resolve the question and problem and achieve with gluon the same speed as with the module/symbol API.<br>
+  Two changes were necessary:
+  * Use hybridize(static_shape=True, static_alloc=True); this improved the speed to roughly 37 seconds
+  * Use DataIterLoader based on the `mx.io.NDArrayIter` as described [here](https://mxnet.incubator.apache.org/versions/master/tutorials/gluon/datasets.html) in the appendix, rather than the `mx.gluon.data.DataLoader`. This improved the speed to finally 20.17 seconds. No idea why the DataLoder is so much worse than the NDArrayIter.
 * [tensorflow-keras-speed.ipynb](https://nbviewer.jupyter.org/github/cs224/mxnet-gluon-vs-sym-and-others/blob/master/tensorflow-keras-speed.ipynb?flush_cache=true)<br>
   Same model but implemented in tensorflow keras. In order to run the model you'll have to use the tfkeras conda environment that you can create by hand via `conda env create -f environment_tfkeras.yml`.<br>
   The time needed is 36.34 seconds, e.g. a bit faster than the mxnet gluon version above, but slower than the mxnet module/symbol version. The metrics are also a bit better after 20 epochs than with both mxnet versions, but this may be due to differences in the weight initialization (while I've used in both cases Xavier initializers).
@@ -33,7 +36,8 @@ In the top of the notebooks you will see the [watermark](https://pypi.org/projec
 
   | base library | variant       | time  |
   |--------------|---------------|-------|
-  | mxnet        | module/symbol | 21.86 |
-  | mxnet        | keras         | 32.89 |
-  | mxnet        | gluon         | 47.43 |
-  | tensorflow   | keras         | 36.34 |
+  | mxnet        | module/symbol                                                         | 21.86 |
+  | mxnet        | keras                                                                 | 32.89 |
+  | mxnet        | gluon                                                                 | 47.43 |
+  | mxnet        | gluon DataIterLoader, hybridize(static_shape=True, static_alloc=True) | 20.17 |
+  | tensorflow   | keras                                                                 | 36.34 |
